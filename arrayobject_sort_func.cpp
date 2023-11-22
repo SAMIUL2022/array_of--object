@@ -10,7 +10,13 @@ int roll;
 int marks;
 
 };
+bool cmp(student a,student b)
+{
 
+   if(a.marks==b.marks)
+   return a.roll<b.roll;
+   else return a.marks<b.marks;
+};
 int main ()
 
 {
@@ -21,29 +27,9 @@ int main ()
   {
     cin>>a[i].name>>a[i].roll>>a[i].marks;
   }
-  for (int i = 0; i < n-1; i++)
-  {
-    for (int j = i+1; j < n; j++)
-    {
-        // if(a[i].marks>a[j].marks)
-        // {
-        //     swap(a[i],a[j]);
+  
+    sort(a,a+n,cmp);
 
-        // }
-        // if(a[i].marks==a[j].marks)
-        // {if(a[i].roll>a[i].roll)
-        //     swap(a[i],a[j]);
-
-        // }
-
-        if(a[i].roll>a[i].roll){
-swap(a[i],a[j]);
-
-        }
-
-    }
-    
-  }
   for (int i = 0; i < n; i++)
   {
      cout<<a[i].name<<" "<<a[i].roll<<" "<<a[i].marks<<endl;
@@ -53,4 +39,4 @@ swap(a[i],a[j]);
 
 
     return 0;
-}
+} 
